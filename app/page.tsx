@@ -7,7 +7,7 @@ import {
 
 export default function Home() {
   return (
-    <main className="relative lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+    <main className="relative">
       <section className="container pt-6">
         <Breadcrumb>
           <BreadcrumbList>
