@@ -7,15 +7,19 @@ import {
 
 export default function Home() {
   return (
-    <main className="relative p-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
-      <Breadcrumb>
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbPage>Home</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
-      <p>{`This is ym5754n's site.`}</p>
+    <main className="relative lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+      <section className="container pt-6">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbPage>Home</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </section>
+      <section className="container pt-6">
+        <p>{`This is ym5754n's site.`}</p>
+      </section>
     </main>
   );
 }
