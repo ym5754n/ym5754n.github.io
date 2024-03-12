@@ -9,20 +9,6 @@ import {
 
 export default function Read() {
   return (
-    <main className="relative">
-      <section className="container pt-6">
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/">Home</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage>Read</BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
-      </section>
-    </main>
+    <p>{`This is the list ym5754n read.`}</p>
   )
 }
