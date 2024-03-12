@@ -8,6 +8,7 @@ import { siteConfig } from "@/config/site";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/providers"
+import { BreadcrumbShow } from "@/components/breadcrumb";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -93,7 +94,16 @@ export default function RootLayout({
           >
             <div className="relative flex min-h-screen flex-col bg-background">
               <Header />
-              <div className="flex-1">{children}</div>
+              <div className="flex-1">
+                <main className="relative">
+                  <section className="container pt-6">
+                    <BreadcrumbShow />
+                  </section>
+                  <section className="container pt-6">
+                    {children}
+                  </section>
+                </main>
+              </div>
               <Footer />
             </div>
           </ThemeProvider>
