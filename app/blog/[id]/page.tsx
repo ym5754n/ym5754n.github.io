@@ -3,7 +3,7 @@ import { Blog } from "@/types/blog";
 import markdownHtml from "zenn-markdown-html";
 import 'zenn-content-css';
 
-export async function generateStaticParams({}) {
+export async function generateStaticParams() {
   const posts = await client.get({ endpoint: "blog" });
  
   return posts.contents.map((post: Blog) => ({
@@ -11,7 +11,7 @@ export async function generateStaticParams({}) {
   }))
 }
 
-export default async function Post({ params }: { params: { id: string }}) {
+export default async function Post({ params }: { params: { id: string } }) {
   const post: Blog = await getData(params.id);
 
   let html = markdownHtml(post.content);
