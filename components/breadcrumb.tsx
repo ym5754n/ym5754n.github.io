@@ -9,6 +9,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import { useSelectedLayoutSegments } from "next/navigation";
+import { Fragment } from "react";
 
 export function BreadcrumbShow() {
   const segments = useSelectedLayoutSegments();
@@ -27,15 +28,15 @@ export function BreadcrumbShow() {
           joinedSegment += segment + "/";
           display = key === 0 ? segment.charAt(0).toUpperCase() + segment.slice(1) : segment;
           return (
-          <>
+          <Fragment key={key}>
             <BreadcrumbSeparator />
-            <BreadcrumbItem>
+            <BreadcrumbItem key={key}>
               {key < segments.length - 1
                 ? <BreadcrumbLink href={`/${joinedSegment}`}>{display}</BreadcrumbLink>
                 : <BreadcrumbPage>{display}</BreadcrumbPage>
               }
             </BreadcrumbItem>
-          </>
+          </Fragment>
           );
         })}
       </BreadcrumbList>
