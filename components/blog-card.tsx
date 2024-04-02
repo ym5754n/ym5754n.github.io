@@ -10,7 +10,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-export default function BlogCard(post: Blog) {
+type Props = {
+  post: Blog
+};
+
+export default function BlogCard(props: Props) {
+  const post = props.post;
   return (
     <li key={post.id}>
       <Link href={`/blog/${post.id}`}>
