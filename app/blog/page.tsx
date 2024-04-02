@@ -1,15 +1,6 @@
-import Link from "next/link";
 import { client } from "@/lib/client";
 import { Blog } from "@/types/blog";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import BlogCard from "@/components/blog-card";
 
 export default async function Blog() {
