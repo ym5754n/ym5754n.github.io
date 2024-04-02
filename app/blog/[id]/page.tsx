@@ -3,6 +3,13 @@ import { Blog } from "@/types/blog";
 import markdownHtml from "zenn-markdown-html";
 import 'zenn-content-css';
 
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
 export async function generateStaticParams() {
   const posts = await client.get({ endpoint: "blog" });
  
@@ -18,10 +25,14 @@ export default async function Post({ params }: { params: { id: string } }) {
 
   return (
     <main>
-      <h1>{post.title}</h1>
-      <p>{post.publishedAt}</p>
+      <Card>
+        <CardHeader>
+          <CardDescription>{ new Date(post.publishedAt).toLocaleDateString() }</CardDescription>
+          <CardTitle>{post.title}</CardTitle>                  
+        </CardHeader>
+      </Card>
       <div
-        className="znc"
+        className="znc p-6"
         dangerouslySetInnerHTML={{
           __html: html,
         }}

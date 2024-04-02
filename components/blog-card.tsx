@@ -17,7 +17,7 @@ type Props = {
 export default function BlogCard(props: Props) {
   const post = props.post;
   return (
-    <li key={post.id}>
+    <li key={post.id} className="min-w-0">
       <Link href={`/blog/${post.id}`}>
         <Card>
           <CardHeader>
