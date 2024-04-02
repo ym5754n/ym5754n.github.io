@@ -12,12 +12,13 @@ import {
 
 type Props = {
   post: Blog
+  key: number
 };
 
 export default function BlogCard(props: Props) {
   const post = props.post;
   return (
-    <li key={post.id} className="min-w-0">
+    <li key={props.key} className="min-w-0">
       <Link href={`/blog/${post.id}`}>
         <Card>
           <CardHeader>
