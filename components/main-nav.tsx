@@ -41,15 +41,15 @@ export function MainNav() {
           Read
         </Link>
         <Link
-          href="/watched"
+          href="/work"
           className={cn(
             "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/watched")
+            pathname?.startsWith("/work")
               ? "text-foreground"
               : "text-foreground/60"
           )}
         >
-          Watched
+          Work
         </Link>
       </nav>
     </div>
