@@ -1,6 +1,8 @@
 import { client } from "@/lib/client";
 import { Book } from "@/types/book";
 import Image from "next/image";
+import markdownHtml from "zenn-markdown-html";
+import 'zenn-content-css';
 
 import {
   Card,
@@ -8,6 +10,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Separator } from "@/components/ui/separator";
 
 export async function generateStaticParams() {
   const books = await client.get({ endpoint: "book" });
@@ -19,7 +30,8 @@ export async function generateStaticParams() {
 
 export default async function Post({ params }: { params: { id: string } }) {
   const book: Book = await getData(params.id);
-  const comment = book.comment;
+
+  let comment = markdownHtml(book.comment);
 
   return (
     <main>
@@ -40,24 +52,40 @@ export default async function Post({ params }: { params: { id: string } }) {
             style={{ width: "auto", height: "200px" }}
           />
         </div>
-        <div>
-          <p className="pb-2">書籍情報</p>
-          <dl className="flex flex-wrap w-full">
-            <dt className="w-2/5">タイトル：</dt>
-            <dd className="w-3/5">{book.book.volumeInfo.title}</dd>
-            <dt className="w-2/5">著者：</dt>
-            <dd className="w-3/5">
-              {book.book.volumeInfo.authors.map((author) => (
-                `${author} `
-              ))}
-            </dd>
-            <dt className="w-2/5">発行年月日：</dt>
-            <dd className="w-3/5">{book.book.volumeInfo.publishedDate}</dd>
-          </dl>
-        </div>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>項目</TableHead>
+              <TableHead>内容</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell>タイトル</TableCell>
+              <TableCell>{book.book.volumeInfo.title}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>著者</TableCell>
+              <TableCell>
+                {book.book.volumeInfo.authors.map((author) => (
+                  `${author} `
+                ))}
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>発行年月日</TableCell>
+              <TableCell>{book.book.volumeInfo.publishedDate}</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
         <div className="sm:col-span-1 md:col-span-2 lg:col-span-2 xl:col-span-2">
-            {/* TODO: markdownで入稿して表示できるようにする */}
-            <p>{book.comment}</p>
+          <Separator className="mt-6 mb-6" />
+          <div
+            className="znc"
+            dangerouslySetInnerHTML={{
+              __html: comment,
+            }}
+          />
         </div>
       </div>
     </main>
