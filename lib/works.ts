@@ -6,6 +6,10 @@ export const Works = [
         tags: [
             "React",
             "Next.js",
+            "NextAuth.js",
+            "Tailwind",
+            "TypeScript",
+            "Vercel",
         ],
     },
     {
@@ -13,8 +17,11 @@ export const Works = [
         url: "https://github.com/ym5754n/microposts",
         comment: "Twitterライクなアプリ",
         tags: [
+            "Docker",
             "Laravel",
-            "LightSail",
+            "vite",
+            "Tailwind",
+            "Amazon LightSail",
         ]
     },
     {
@@ -22,9 +29,12 @@ export const Works = [
         url: "https://github.com/ym5754n/reading-recorder",
         comment: "これからはじめるReact実践入門を写経+Tailwind",
         tags: [
+            "Docker",
             "React",
             "Next.js",
+            "Prisma",
             "Tailwind",
+            "Vercel",
         ]
     },
     {
@@ -32,8 +42,10 @@ export const Works = [
         url: "https://github.com/ym5754n/backlog-extension",
         comment: "メモ+メモ内容をbacklogに登録するアプリ",
         tags: [
+            "Docker",
             "Python",
             "Django",
+            "SQLite3",
         ]
     },
     {
@@ -42,6 +54,7 @@ export const Works = [
         comment: "microCMSの拡張フィールドでmarkdownをかけるようにするアプリ",
         tags: [
             "React",
+            "Next.js",
         ]
     },
     {
@@ -50,6 +63,7 @@ export const Works = [
         comment: "microCMSの拡張フィールドで書籍データを登録できるようにするアプリ",
         tags: [
             "React",
+            "Next.js",
             "googleapi",
         ]
     },
