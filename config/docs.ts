@@ -15,8 +15,8 @@ export const docsConfig: DocsConfig = {
       href: "/read",
     },
     {
-      title: "Watched",
-      href: "/watched",
+      title: "Work",
+      href: "/work",
     },
     {
       title: "GitHub",
