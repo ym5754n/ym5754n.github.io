@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { Works } from "@/lib/works";
 
-export default function Watched() {
+export default function Work() {
   return (
     <main>
       <Table>
