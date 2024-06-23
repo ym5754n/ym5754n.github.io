@@ -16,10 +16,10 @@ export default function Home() {
     <div className="grid gap-3 grid-cols-3">
       <div className="col-span-3 md:col-span-1 grid justify-center items-center">
         <Image
-          src="https://placehold.jp/150x150.png"
+          src="https://avatars.githubusercontent.com/u/29919765?v=4"
           alt="プロフィール画像"
-          width={150}
-          height={150}
+          width={200}
+          height={200}
         />
       </div>
       <div className="col-span-3 md:col-span-2">
